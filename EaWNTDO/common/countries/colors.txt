@@ -1,4 +1,0 @@
-UES = {
-	color = rgb { 91 127 189 }
-	color_ui = rgb { 91 127 189 }
-}
