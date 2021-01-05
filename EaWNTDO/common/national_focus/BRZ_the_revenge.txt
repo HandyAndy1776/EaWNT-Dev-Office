@@ -2,7 +2,7 @@ focus_tree = {
 	id = brz_revenge_tree
 
 	country = {
-		factor = 1000
+		factor = 0
 		modifier = {
 			add = 15
 			tag = BRZ
