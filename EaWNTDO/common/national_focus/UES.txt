@@ -1,0 +1,363 @@
+#######################################
+# United States of America Focus Tree #
+#######################################
+
+focus_tree = {
+	id = ues_focus
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			tag = UES
+		}
+	}
+	default = no
+	continuous_focus_position = { x = 2400 y = 800 }
+
+	############
+	### Base ###
+	############
+
+	focus = {
+		id = UES_Armed_Forces_Annual_Report
+		#icon = 
+		x = 5
+		y = 0
+		cost = 6
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Armed_Forces_Annual_Report"
+			army_experience = 25
+		}
+	}
+	focus = {
+		id = UES_Prepare_for_the_Elections
+		#icon = 
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = UES_Armed_Forces_Annual_Report
+		prerequisite = {
+			focus = UES_Armed_Forces_Annual_Report
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Prepare_for_the_Elections"
+			add_political_power = 50
+		}
+	}
+	focus = {
+		id = UES_Decide_Who_will_Run
+		#icon = 
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = UES_Prepare_for_the_Elections
+		prerequisite = {
+			focus = UES_Prepare_for_the_Elections
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Decide_Who_will_Run"
+			country_event = ues.1
+			add_stability = 0.05
+		}
+	}
+	focus = {
+		id = UES_Contact_the_Army_Corps_of_Engineers
+		#icon = 
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = UES_Decide_Who_will_Run
+		prerequisite = {
+			focus = UES_Decide_Who_will_Run
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Contact_the_Army_Corps_of_Engineers"
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = industry
+			}
+		}
+	}
+	focus = {
+		id = UES_Creation_of_US_Interstate_77
+		#icon = 
+		x = -2
+		y = 1
+		cost = 6
+		relative_position_id = UES_Contact_the_Army_Corps_of_Engineers
+		prerequisite = {
+			focus = UES_Contact_the_Army_Corps_of_Engineers
+		}
+		mutually_exclusive = {
+			focus = UES_Revitalize_Industry
+			focus = UES_Expand_the_Port_of_New_Baltimore
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Creation_of_US_Interstate_77"
+			28 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			13 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+			90 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = UES_Revitalize_Industry
+		#icon = 
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = UES_Contact_the_Army_Corps_of_Engineers
+		prerequisite = {
+			focus = UES_Contact_the_Army_Corps_of_Engineers
+		}
+		mutually_exclusive = {
+			focus = UES_Creation_of_US_Interstate_77
+			focus = UES_Expand_the_Port_of_New_Baltimore
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Revitalize_Industry"
+			13 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+			28 = {
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 1
+			}
+		}
+	}
+	focus = {
+		id = UES_Expand_the_Port_of_New_Baltimore
+		#icon = 
+		x = 2
+		y = 1
+		cost = 6
+		relative_position_id = UES_Contact_the_Army_Corps_of_Engineers
+		prerequisite = {
+			focus = UES_Contact_the_Army_Corps_of_Engineers
+		}
+		mutually_exclusive = {
+			focus = UES_Creation_of_US_Interstate_77
+			focus = UES_Revitalize_Industry
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Contact_the_Army_Corps_of_Engineers"
+			13 = {
+				add_building_construction = {
+					type = dockyard
+					level = 2
+					instant_build = yes
+				}
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = naval_base     
+					level = 2
+					instant_build = yes
+					province = {
+						limit_to_naval_base = yes
+					}
+				}
+			}
+		}
+	}
+	focus = {
+		id = UES_Creation_of_the_American_Culture_Initiative
+		#icon = 
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = UES_Revitalize_Industry
+		prerequisite = {
+			focus = UES_Creation_of_US_Interstate_77
+			focus = UES_Revitalize_Industry
+			focus = UES_Expand_the_Port_of_New_Baltimore
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Creation_of_the_American_Culture_Initiative"
+			country_event = ues.2
+		}
+	}
+	focus = {
+		id = UES_American_Film_Festival
+		#icon = 
+		x = -2
+		y = 1
+		cost = 6
+		relative_position_id = UES_Creation_of_the_American_Culture_Initiative
+		prerequisite = {
+			focus = UES_Creation_of_the_American_Culture_Initiative
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_American_Film_Festival"
+			country_event = ues.3
+		}
+	}
+	focus = {
+		id = UES_Export_Americas_Greatest_Shows
+		#icon = 
+		x = 0
+		y = 1
+		cost = 6
+		relative_position_id = UES_Creation_of_the_American_Culture_Initiative
+		prerequisite = {
+			focus = UES_Creation_of_the_American_Culture_Initiative
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Export_Americas_Greatest_Shows"
+			country_event = ues.4
+		}
+	}
+	focus = {
+		id = UES_Americas_Greatest_Hits_Album
+		#icon = 
+		x = 2
+		y = 1
+		cost = 6
+		relative_position_id = UES_Creation_of_the_American_Culture_Initiative
+		prerequisite = {
+			focus = UES_Creation_of_the_American_Culture_Initiative
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Americas_Greatest_Hits_Album"
+			country_event = ues.5
+		}
+	}
+	focus = {
+		id = UES_Successful_Inauguration
+		#icon = 
+		x = 0
+		y = 1
+		cost = 0
+		relative_position_id = UES_Export_Americas_Greatest_Shows
+		prerequisite = {
+			focus = UES_American_Film_Festival
+		}
+		prerequisite = {
+			focus = UES_Export_Americas_Greatest_Shows
+		}
+		prerequisite = {
+			focus = UES_Americas_Greatest_Hits_Album
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Successful_Inauguration"
+			custom_effect_tooltip = Successful_Inauguration_Tooltip
+		}
+	}
+	focus = {
+		id = UES_Continued_Military_Administration
+		#icon = 
+		x = -4
+		y = 1
+		cost = 5
+		relative_position_id = UES_Successful_Inauguration
+		available = {
+			has_country_flag = Disaster
+		}
+		prerequisite = {
+			focus = UES_Successful_Inauguration
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_Continued_Military_Administration"
+		}
+	}
+	focus = {
+		id = UES_The_Sunset_Administration
+		#icon = 
+		x = -2
+		y = 1
+		cost = 5
+		relative_position_id = UES_Successful_Inauguration
+		available = {
+			has_country_flag = Sunset_Elected
+		}
+		prerequisite = {
+			focus = UES_Successful_Inauguration
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_The_Sunset_Administration"
+		}
+	}
+	focus = {
+		id = UES_The_Bush_Administration
+		#icon = 
+		x = 0
+		y = 1
+		cost = 5
+		relative_position_id = UES_Successful_Inauguration
+		available = {
+			has_country_flag = Bush_Elected
+		}
+		prerequisite = {
+			focus = UES_Successful_Inauguration
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_The_Bush_Administration"
+		}
+	}
+	focus = {
+		id = UES_The_Musk_Administration
+		#icon = 
+		x = 2
+		y = 1
+		cost = 5
+		relative_position_id = UES_Successful_Inauguration
+		available = {
+			has_country_flag = Musk_Elected
+		}
+		prerequisite = {
+			focus = UES_Successful_Inauguration
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_The_Musk_Administration"
+		}
+	}
+	focus = {
+		id = UES_The_Jones_Administration
+		#icon = 
+		x = 4
+		y = 1
+		cost = 5
+		relative_position_id = UES_Successful_Inauguration
+		available = {
+			has_country_flag = Jones_Elected
+		}
+		prerequisite = {
+			focus = UES_Successful_Inauguration
+		}
+		completion_reward = {
+			log = "[GetDateText]: [Root.GetName]: Focus UES_The_Jones_Administration"
+		}
+	}
+}

@@ -1,0 +1,289 @@
+﻿###################################
+# United States of America Events #
+###################################
+
+add_namespace = ues
+
+### Who Will Run?
+country_event = {
+	id = ues.1
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.1" }
+	title = ues.1.t
+	desc = ues.1.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.1.a
+	}
+}
+
+### Creation of the American Culture Initiative
+country_event = {
+	id = ues.2
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.2" }
+	title = ues.2.t
+	desc = ues.2.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.2.a
+	}
+}
+
+### American Film Festival
+country_event = {
+	id = ues.3
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.3" }
+	title = ues.3.t
+	desc = ues.3.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.3.a
+	}
+}
+
+### The America's Greatest Shows
+country_event = {
+	id = ues.4
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.4" }
+	title = ues.4.t
+	desc = ues.4.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.4.a
+	}
+}
+
+### The America's Greatest Hits Album
+country_event = {
+	id = ues.5
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.5" }
+	title = ues.5.t
+	desc = ues.5.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.5.a
+	}
+}
+
+### The Election - 3rd Novemeber 1007
+country_event = {
+	id = ues.6
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.6" }
+	title = ues.6.t
+	desc = ues.6.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = { #Sunset
+		name = ues.6.a
+		set_country_flag = Sunset_Elected
+		hidden_effect = {
+			random_list = {
+				95 = {
+					country_event = {
+						id = ues.7
+						days = 78
+					}
+				}
+				5 = {
+					country_event = {
+						id = ues.11
+						days = 78
+					}
+				}
+			}
+		}
+	}
+	option = { #Bush
+		name = ues.6.b
+		set_country_flag = Bush_Elected
+		hidden_effect = {
+			random_list = {
+				95 = {
+					country_event = {
+						id = ues.8
+						days = 78
+					}
+				}
+				5 = {
+					country_event = {
+						id = ues.11
+						days = 78
+					}
+				}
+			}
+		}
+	}
+	option = { #Musk
+		name = ues.6.c
+		set_country_flag = Musk_Elected
+		hidden_effect = {
+			random_list = {
+				95 = {
+					country_event = {
+						id = ues.9
+						days = 78
+					}
+				}
+				5 = {
+					country_event = {
+						id = ues.11
+						days = 78
+					}
+				}
+			}
+		}
+	}
+	option = { #Jones
+		name = ues.6.d
+		set_country_flag = Jones_Elected
+		hidden_effect = {
+			random_list = {
+				95 = {
+					country_event = {
+						id = ues.10
+						days = 78
+					}
+				}
+				5 = {
+					country_event = {
+						id = ues.11
+						days = 78
+					}
+				}
+			}
+		}
+	}
+}
+
+### Sunset Inauguration.
+country_event = {
+	id = ues.7
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.7" }
+	title = ues.7.t
+	desc = ues.7.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.7.a
+		hidden_effect = {
+			unlock_national_focus = UES_Successful_Inauguration
+		}
+	}
+}
+
+### Bush Inauguration.
+country_event = {
+	id = ues.8
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.8" }
+	title = ues.8.t
+	desc = ues.8.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.8.a
+		hidden_effect = {
+			unlock_national_focus = UES_Successful_Inauguration
+		}
+	}
+}
+
+### Musk Inauguration.
+country_event = {
+	id = ues.9
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.9" }
+	title = ues.9.t
+	desc = ues.9.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.9.a
+		hidden_effect = {
+			unlock_national_focus = UES_Successful_Inauguration
+		}
+	}
+}
+
+### Jones Inauguration.
+country_event = {
+	id = ues.10
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.10" }
+	title = ues.10.t
+	desc = ues.10.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.10.a
+		hidden_effect = {
+			unlock_national_focus = UES_Successful_Inauguration
+		}
+	}
+}
+
+### The Great Disaster.
+country_event = {
+	id = ues.11
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.11" }
+	title = ues.11.t
+	desc = ues.11.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.11.a
+		hidden_effect = {
+			unlock_national_focus = UES_Successful_Inauguration
+			set_country_flag = Disaster
+			if = {
+				limit = { has_country_flag = Sunset_Elected }
+				clr_country_flag = Sunset_Elected
+			}
+			else_if = {
+				limit = { has_country_flag = Bush_Elected }
+				clr_country_flag = Bush_Elected
+			}
+			else_if = {
+				limit = { has_country_flag = Musk_Elected }
+				clr_country_flag = Musk_Elected
+			}
+			else = {
+				clr_country_flag = Jones_Elected
+			}
+		}
+	}
+}

@@ -147,6 +147,11 @@ create_country_leader = {
 	}
 }
 
+country_event = {
+	id = ues.6
+	days = 307
+}
+
 #create_corps_commander = {
 	#	name = "Applejack"
 	#	portrait_path = "gfx/leaders/EQS/Applejack.dds"
