@@ -287,3 +287,18 @@ country_event = {
 		}
 	}
 }
+### Biden's Speech.
+country_event = {
+	id = ues.12
+	immediate = { log = "[GetDateText]: [Root.GetName]: event ues.12" }
+	title = ues.12.t
+	desc = ues.12.d
+	#picture =
+
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = ues.12.a
+	}
+}

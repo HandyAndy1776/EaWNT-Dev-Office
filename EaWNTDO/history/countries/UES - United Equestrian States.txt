@@ -151,6 +151,10 @@ country_event = {
 	id = ues.6
 	days = 307
 }
+country_event = {
+	id = ues.12
+	days = 27
+}
 
 #create_corps_commander = {
 	#	name = "Applejack"
